@@ -1,6 +1,7 @@
 {
   "name": "argon-design-system-react",
   "version": "1.1.0",
+  "homepage": "https://github.com/Swabahadine/argon",
   "description": "React version of Argon Design System by Creative Tim",
   "main": "index.js",
   "repository": {
@@ -27,10 +28,9 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-design-system-react/issues"
   },
-  "homepage": "https://demos.creative-tim.com/argon-design-system-react/",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && gulp licenses",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
@@ -50,6 +50,7 @@
   "dependencies": {
     "bootstrap": "4.3.1",
     "classnames": "2.2.6",
+    "gh-pages": "^2.2.0",
     "headroom.js": "0.11.0",
     "moment": "2.24.0",
     "node-sass": "4.13.1",

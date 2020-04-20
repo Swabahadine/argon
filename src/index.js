@@ -31,29 +31,8 @@ import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 
 ReactDOM.render(
-  // <BrowserRouter>
-  //   <Switch>
-  //     <Route path="/" exact render={props => <Inscription {...props} />} />
-  //     <Route path="/urahafu" exact render={props => <Inscription {...props} />} />
-  //     <Route
-  //       path="/landing-page"
-  //       exact
-  //       render={props => <Landing {...props} />}
-  //     />
-  //     <Route path="/login-page" exact render={props => <Login {...props} />} />
-  //     <Route
-  //       path="/profile-page"
-  //       exact
-  //       render={props => <Profile {...props} />}
-  //     />
-  //     <Route
-  //       path="/register-page"
-  //       exact
-  //       render={props => <Register {...props} />}
-  //     />
-  //     <Redirect to="/urahafu" />
-  //   </Switch>
-  // </BrowserRouter>,
-  <Inscription />,
+  <React.StrictMode>
+  <Inscription />
+</React.StrictMode>,
   document.getElementById("root")
 );
