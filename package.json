@@ -1,9 +1,9 @@
 {
   "name": "argon-design-system-react",
   "version": "1.1.0",
-  "homepage": "https://github.com/Swabahadine/argon",
+  "homepage": ".",
   "description": "React version of Argon Design System by Creative Tim",
-  "main": ".",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativetimofficial/argon-design-system-react.git"
