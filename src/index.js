@@ -24,6 +24,7 @@ import "assets/vendor/font-awesome/css/font-awesome.min.css";
 import "assets/scss/argon-design-system-react.scss?v1.1.0";
 
 import Index from "views/Index.js";
+import Inscription from "./views/Inscription.js";
 import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
@@ -32,7 +33,8 @@ import Register from "views/examples/Register.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={props => <Index {...props} />} />
+      <Route path="/" exact render={props => <Inscription {...props} />} />
+      <Route path="/urahafu" exact render={props => <Inscription {...props} />} />
       <Route
         path="/landing-page"
         exact
@@ -49,7 +51,7 @@ ReactDOM.render(
         exact
         render={props => <Register {...props} />}
       />
-      <Redirect to="/" />
+      <Redirect to="/urahafu" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

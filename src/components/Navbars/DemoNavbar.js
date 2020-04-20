@@ -72,11 +72,8 @@ class DemoNavbar extends React.Component {
             id="navbar-main"
           >
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                <img
-                  alt="..."
-                  src={require("assets/img/brand/argon-react-white.png")}
-                />
+              <NavbarBrand className="d-flex justify-content-center align-items-end" to="/" tag={Link}>
+                <h1 className="h4 font-weight-bold text-white">URAHAFU</h1>
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
@@ -177,6 +174,9 @@ class DemoNavbar extends React.Component {
                       <span className="nav-link-inner--text">Examples</span>
                     </DropdownToggle>
                     <DropdownMenu>
+                      <DropdownItem to="/inscriptions" tag={Link}>
+                        Inscription
+                      </DropdownItem>
                       <DropdownItem to="/landing-page" tag={Link}>
                         Landing
                       </DropdownItem>
