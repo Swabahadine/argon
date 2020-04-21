@@ -23,7 +23,9 @@ const FormLayout = ({
 					</p>
 				</Col>
 				<Col className="col-12 col-md-10 d-flex justify-content-center">
+					<Row className="w-100 justify-content-center">
 					{children}
+					</Row>
 				</Col>
 			</Row>
 		</Container>

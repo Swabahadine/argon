@@ -18,14 +18,23 @@ myHeaders.append(
 myHeaders.append('Authorization', 'AWS4-HMAC-SHA256 Credential=AKIA2CVV6DL3AJUVMGMC/20200328/eu-west-3/execute-api/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=00d4dc4127c79338f70dbc1eef1bfca588958065b1f1093d2c42e20f1fb5920e');
 
 
-export const requestOptions = (body) => {
+export const requestOptions = (body, method = 'POST') => {
 	console.log(JSON.stringify(body));
 
 	return {
 		mode: 'no-cors',
-		method: 'POST',
+		method,
 		headers: myHeaders,
 		body: JSON.stringify(body),
+		redirect: 'follow',
+	};
+};
+
+export const requestGetOptions = () => {
+	return {
+		mode: 'no-cors',
+		method: 'GET',
+		headers: myHeaders,
 		redirect: 'follow',
 	};
 };

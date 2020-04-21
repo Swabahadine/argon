@@ -56,35 +56,6 @@ initialData.phone = '';
 
 const Inscription = () => {
     const [statePage, setStatePage] = useState(1);
-    const [formData, setFormData] = useState(initialData);
-	const [success, setSuccess] = useState(false);
-	const [vQrcode, setVQrcode] = useState("");
-	const [error, setError] = useState(false);
-	const handleSubmit = useCallback(async () => {
-		// formData.phone = formData.phone.split('+269-')[1] || formData.phone;
-		// fetch(
-		// 	'https://ino051djkg.execute-api.eu-west-3.amazonaws.com/demo/usagers',
-		// 	requestOptions(formData),
-		// )
-		// 	.then((result) => result.text())
-		// 	.then(() => {
-		// 		setVQrcode(formData.phone);
-		// 		setSuccess(true);
-		// 	})
-		// 	.catch((err) => {
-		// 		// eslint-disable-next-line no-console
-		// 		console.log(err);
-		// 		setError(true);
-		// 	});
-		setFormData(initialData);
-		setSuccess(true);
-	}, [formData]);
-
-	const handleChange = useCallback((newData) => {
-		setSuccess(false);
-		setError(false);
-		setFormData(newData);
-	}, []);
     return(
       <>
         {/* <DemoNavbar /> */}

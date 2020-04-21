@@ -15,10 +15,11 @@ import {
 	CardText,
 	Spinner,
 } from 'reactstrap';
+import classnames from 'classnames';
 
 import { Field, FieldError, Form } from 'react-jsonschema-form-validation';
 
-import { myHeaders, requestOptions } from '../../lib/api';
+import { myHeaders, requestOptions, requestGetOptions } from '../../lib/api';
 
 import './Form.scss';
 
@@ -68,7 +69,7 @@ const Recherche = () => {
 		setTimeout(() => {
 			fetch(
 				`https://ino051djkg.execute-api.eu-west-3.amazonaws.com/demo/usagers?phone=${phone}`,
-				{ headers: myHeaders },
+				requestGetOptions,
 			)
 				.then((result) => result.json())
 				.then((res) => {
@@ -90,7 +91,7 @@ const Recherche = () => {
 					setSearch({});
 					setSuccess(false);
 				});
-			setFormData(initialData);
+			//setFormData(initialData);
 		}, 100);
 	}, []);
 
@@ -121,7 +122,7 @@ const Recherche = () => {
 			{children}
 		</Button>
 	);
-	return  (<FormLayout title="Recherche" className="justify-content-center" >
+	return  (<FormLayout title="Recherche" className="d-flex justify-content-center pb-7" >
 					<Col className="col-12 col-md-12 col-lg-10">
 						<Form
 							data={formData}
@@ -161,7 +162,7 @@ const Recherche = () => {
 									</Row>
 								)
 							}
-							<Row className="justify-content-center mt-7">
+							<Row className="justify-content-center py-4">
 								<Col className="col-auto">
 									<Button
 										color={!formData.phone ? 'secondary' : 'info'}
@@ -169,24 +170,25 @@ const Recherche = () => {
 										onClick={() => handleSubmit(formData.phone.split('+269-')[1] || formData.phone)}
 									>
 										Envoyer
+										<Spinner
+											className={classnames({
+											"position-relative ml-1": true,
+											visible: success,
+											invisible: !success
+											})}
+											size="sm"
+											// type="grow"
+										/>
 									</Button>
+									
 								</Col>
 							</Row>
 						</Form>
 					</Col>
-				<br />
-				<br />
-				<br />
-				{success && (
-					<div className="text-center">
-						<br /><br /><br /><br />
-						<Spinner style={{ width: '3rem', height: '3rem' }} color="secondary" />
-					</div>
-				)}
 				{search.phone && !success
 				&& (
-					<Row className="mt-10 justify-content-center">
-						<Col xs="12" sm="12" md="6">
+					<Col xs="12" className="py-4 d-flex justify-content-center">
+						<Col xs="12" sm="12" md="9">
 							<Card>
 								<CardHeader>
 									<div className="d-flex justify-content-between">
@@ -279,7 +281,7 @@ const Recherche = () => {
 								</CardFooter>
 							</Card>
 						</Col>
-					</Row>
+					</Col>
 				)}
 			</FormLayout>)
 }
