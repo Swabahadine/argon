@@ -135,7 +135,7 @@ const Recherche = () => {
 								<Col className="col-12">
 									<FormGroup>
 										<Label htmlFor="contactPhone">
-											Numéro de téléphone
+											Numéro de téléphone (ex: 3247223)
 										</Label>
 										<Field
 											component={Input}

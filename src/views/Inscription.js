@@ -13,6 +13,7 @@ import {
 	Row,
     Container,
 } from 'reactstrap';
+import { Link } from 'react-router';
 import { Field, FieldError, Form } from 'react-jsonschema-form-validation';
 
 // core components
@@ -87,6 +88,7 @@ const Inscription = () => {
                     <div className="btn-wrapper mt-5">
                       <Button
                         className="btn-white btn-icon mb-3 mb-sm-0"
+                        href="#form"
                         color={statePage === 1 ? "primary" : "default"}
                         onClick={() => {setStatePage(1)}}
                         size="lg"
@@ -96,11 +98,13 @@ const Inscription = () => {
                         </span>
                       </Button>{" "}
                       <Button
+                        href="#form"
                         className="btn-white btn-icon mb-3 mb-sm-0"
                         color={statePage === 2 ? "primary" : "default"}
-                        onClick={() => {setStatePage(2)}}
+                        onClick={() => {
+                          setStatePage(2);
+                        }}
                         size="lg"
-                        target="_blank"
                       >
 
                         <span className="btn-inner--text">
@@ -130,6 +134,7 @@ const Inscription = () => {
             </div>
           </section>
         </div>
+        <div id="form" />
             {statePage === 1 && (<FormInsription />)}
             {statePage === 2 && (<FormRecherche />)}
         <CardsFooter />
